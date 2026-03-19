@@ -18,19 +18,19 @@ export default function Hero() {
   return (
     <section
       id="hero"
-      className="relative min-h-screen flex items-center overflow-hidden bg-[#070e17] pt-nav"
+      className="relative min-h-screen flex items-center overflow-hidden bg-[var(--color-background)] pt-nav"
     >
       {/* Background depth layers */}
       <div className="absolute inset-0">
         {/* Primary ambient glow */}
         <div
           aria-hidden
-          className="absolute top-[-20%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[900px] rounded-full bg-[#1a3a5c]/30 blur-[200px] pointer-events-none animate-float"
+          className="absolute top-[-20%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[900px] rounded-full bg-[var(--brand-900)]/30 dark:bg-[var(--brand-800)]/30 blur-[200px] pointer-events-none animate-float"
         />
         {/* Secondary glow orb */}
         <div
           aria-hidden
-          className="absolute bottom-[10%] right-[5%] w-[600px] h-[600px] rounded-full bg-[#122842]/40 blur-[160px] pointer-events-none animate-float [animation-delay:2.5s]"
+          className="absolute bottom-[10%] right-[5%] w-[600px] h-[600px] rounded-full bg-[var(--brand-950)]/40 dark:bg-[var(--brand-900)]/40 blur-[160px] pointer-events-none animate-float [animation-delay:2.5s]"
         />
         {/* Dot grid texture */}
         <div
@@ -54,7 +54,7 @@ export default function Hero() {
       </div>
 
       {/* Thin top border accent */}
-      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#c9a84c]/30 to-transparent" />
+      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[var(--brand-500)]/30 to-transparent" />
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 py-section">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
@@ -62,25 +62,25 @@ export default function Hero() {
           <div className="lg:col-span-8 lg:col-start-1">
             {/* Badge */}
             <AnimateIn delay={0}>
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-md border border-[#e2e5eb]/10 bg-[#1a3a5c]/40 backdrop-blur-sm text-sm text-[#c9a84c] mb-10">
-                <span className="w-1.5 h-1.5 rounded-full bg-[#c9a84c] animate-pulse" />
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-md border border-[var(--color-border)] bg-[var(--brand-800)]/40 dark:bg-[var(--brand-900)]/40 backdrop-blur-sm text-sm text-[var(--brand-500)] mb-10">
+                <span className="w-1.5 h-1.5 rounded-full bg-[var(--brand-500)] animate-pulse" />
                 {CONTENT.badge}
               </div>
             </AnimateIn>
 
             {/* Headline with gradient highlight */}
             <AnimateIn delay={100}>
-              <h1 className="font-heading font-bold text-[clamp(2.5rem,5vw,4.5rem)] leading-[1.1] tracking-tight text-[#ffffff] mb-8">
+              <h1 className="font-[var(--font-heading)] font-bold text-[clamp(2.5rem,5vw,4.5rem)] leading-[1.1] tracking-tight text-[var(--color-foreground)] mb-8">
                 {CONTENT.headline}{' '}
-                <span className="bg-gradient-to-r from-[#c9a84c] via-[#d4b86a] to-[#c9a84c] bg-clip-text text-transparent">
-                  {CONTENT.highlight}
+                <span className="bg-gradient-to-r from-[var(--brand-500)] via-[var(--brand-400)] to-[var(--brand-500)] bg-clip-text text-transparent">
+                  {CONTENT.highlight)}
                 </span>
               </h1>
             </AnimateIn>
 
             {/* Subline */}
             <AnimateIn delay={200}>
-              <p className="max-w-2xl text-lg md:text-xl text-[#8fa3b1] leading-relaxed mb-12">
+              <p className="max-w-2xl text-lg md:text-xl text-[var(--color-muted-foreground)] leading-relaxed mb-12">
                 {CONTENT.subline}
               </p>
             </AnimateIn>
@@ -89,14 +89,14 @@ export default function Hero() {
             <AnimateIn delay={300}>
               <div className="flex flex-col sm:flex-row items-start gap-5 mb-20">
                 <div className="relative">
-                  <div className="absolute inset-0 bg-[#c9a84c]/20 blur-xl rounded-lg scale-110" />
+                  <div className="absolute inset-0 bg-[var(--brand-500)]/20 blur-xl rounded-lg scale-110" />
                   <a
                     href={CONTENT.cta.href}
-                    className="relative inline-flex items-center px-8 py-4 font-body font-medium bg-[#c9a84c] text-[#070e17] rounded-md hover:bg-[#d4b86a] transition-all ease-expo-out active:scale-[0.97] shadow-lg shadow-[#c9a84c]/20"
+                    className="relative inline-flex items-center px-8 py-4 font-[var(--font-body)] font-medium bg-[var(--brand-500)] text-[var(--color-background)] rounded-md hover:bg-[var(--brand-400)] transition-all duration-300 ease-out active:scale-[0.97] shadow-lg shadow-[var(--brand-500)]/20"
                   >
                     {CONTENT.cta.label}
                     <svg
-                      className="ml-2 w-4 h-4"
+                      className="ml-2 w-4 h-4 transition-transform duration-300 ease-out group-hover:translate-x-1"
                       fill="none"
                       stroke="currentColor"
                       viewBox="0 0 24 24"
@@ -112,11 +112,11 @@ export default function Hero() {
                 </div>
                 <a
                   href={CONTENT.secondary.href}
-                  className="group inline-flex items-center px-8 py-4 font-body font-medium border border-[#e2e5eb]/20 text-[#ffffff] rounded-md hover:border-[#c9a84c]/50 hover:text-[#c9a84c] transition-all ease-expo-out"
+                  className="group inline-flex items-center px-8 py-4 font-[var(--font-body)] font-medium border border-[var(--color-border)] text-[var(--color-foreground)] rounded-md hover:border-[var(--brand-500)]/50 hover:text-[var(--brand-500)] transition-all duration-300 ease-out"
                 >
                   {CONTENT.secondary.label}
                   <svg
-                    className="ml-2 w-4 h-4 transition-transform duration-300 group-hover:translate-x-1"
+                    className="ml-2 w-4 h-4 transition-transform duration-300 ease-out group-hover:translate-x-1"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -134,25 +134,25 @@ export default function Hero() {
 
             {/* Stats row with gold accents */}
             <AnimateIn delay={400}>
-              <div className="flex flex-wrap gap-12 pt-10 border-t border-[#e2e5eb]/10">
+              <div className="flex flex-wrap gap-12 pt-10 border-t border-[var(--color-border)]">
                 {CONTENT.stats.map((stat, index) => (
                   <div key={stat.label} className="relative group">
                     {/* Large background number */}
                     <span
-                      className="absolute -top-6 -left-2 font-heading font-bold text-[4rem] text-[#1a3a5c]/40 leading-none select-none pointer-events-none"
+                      className="absolute -top-6 -left-2 font-[var(--font-heading)] font-bold text-[4rem] text-[var(--brand-800)]/40 dark:text-[var(--brand-900)]/40 leading-none select-none pointer-events-none"
                       style={{ opacity: 0.3 }}
                     >
                       0{index + 1}
                     </span>
                     <div className="relative">
                       <div
-                        className={`font-heading font-bold text-4xl mb-1 ${
-                          stat.accent ? 'text-[#c9a84c]' : 'text-[#ffffff]'
+                        className={`font-[var(--font-heading)] font-bold text-4xl mb-1 ${
+                          stat.accent ? 'text-[var(--brand-500)]' : 'text-[var(--color-foreground)]'
                         }`}
                       >
                         {stat.value}
                       </div>
-                      <div className="text-sm text-[#718096] tracking-wide">
+                      <div className="text-sm text-[var(--color-muted-foreground)] tracking-wide">
                         {stat.label}
                       </div>
                     </div>
@@ -167,16 +167,16 @@ export default function Hero() {
             <AnimateIn delay={200}>
               <div className="relative">
                 {/* Main visual container */}
-                <div className="relative rounded-xl border border-[#e2e5eb]/10 bg-[#1a3a5c]/30 backdrop-blur-sm p-8 overflow-hidden">
+                <div className="relative rounded-xl border border-[var(--color-border)] bg-[var(--brand-800)]/30 dark:bg-[var(--brand-900)]/30 backdrop-blur-sm p-8 overflow-hidden">
                   {/* Glow accent */}
-                  <div className="absolute top-0 left-1/2 -translate-x-1/2 w-1/2 h-px bg-gradient-to-r from-transparent via-[#c9a84c]/60 to-transparent" />
+                  <div className="absolute top-0 left-1/2 -translate-x-1/2 w-1/2 h-px bg-gradient-to-r from-transparent via-[var(--brand-500)]/60 to-transparent" />
 
                   {/* Abstract node network */}
                   <div className="relative h-64">
                     {/* Central node */}
-                    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-16 h-16 rounded-full bg-gradient-to-br from-[#c9a84c] to-[#d4b86a] shadow-lg shadow-[#c9a84c]/30 flex items-center justify-center">
+                    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-16 h-16 rounded-full bg-gradient-to-br from-[var(--brand-500)] to-[var(--brand-400)] shadow-lg shadow-[var(--brand-500)]/30 flex items-center justify-center">
                       <svg
-                        className="w-8 h-8 text-[#070e17]"
+                        className="w-8 h-8 text-[var(--color-background)]"
                         fill="none"
                         stroke="currentColor"
                         viewBox="0 0 24 24"
@@ -199,7 +199,7 @@ export default function Hero() {
                     ].map((node, i) => (
                       <div
                         key={i}
-                        className="absolute w-12 h-12 rounded-full bg-[#122842] border border-[#e2e5eb]/20 flex items-center justify-center animate-float"
+                        className="absolute w-12 h-12 rounded-full bg-[var(--brand-950)] dark:bg-[var(--brand-900)] border border-[var(--color-border)] flex items-center justify-center animate-float"
                         style={{
                           ...(node.top && { top: node.top }),
                           ...(node.bottom && { bottom: node.bottom }),
@@ -208,7 +208,7 @@ export default function Hero() {
                           animationDelay: node.delay,
                         }}
                       >
-                        <div className="w-3 h-3 rounded-full bg-[#c9a84c]/60" />
+                        <div className="w-3 h-3 rounded-full bg-[var(--brand-500)]/60" />
                       </div>
                     ))}
 
@@ -223,7 +223,7 @@ export default function Hero() {
                         y1="50%"
                         x2="30%"
                         y2="15%"
-                        stroke="#c9a84c"
+                        stroke="var(--brand-500)"
                         strokeWidth="0.3"
                         strokeOpacity="0.4"
                       />
@@ -232,7 +232,7 @@ export default function Hero() {
                         y1="50%"
                         x2="75%"
                         y2="15%"
-                        stroke="#c9a84c"
+                        stroke="var(--brand-500)"
                         strokeWidth="0.3"
                         strokeOpacity="0.4"
                       />
@@ -241,7 +241,7 @@ export default function Hero() {
                         y1="50%"
                         x2="25%"
                         y2="80%"
-                        stroke="#c9a84c"
+                        stroke="var(--brand-500)"
                         strokeWidth="0.3"
                         strokeOpacity="0.4"
                       />
@@ -250,7 +250,7 @@ export default function Hero() {
                         y1="50%"
                         x2="75%"
                         y2="85%"
-                        stroke="#c9a84c"
+                        stroke="var(--brand-500)"
                         strokeWidth="0.3"
                         strokeOpacity="0.4"
                       />
@@ -267,7 +267,7 @@ export default function Hero() {
                     ].map((label, i) => (
                       <div
                         key={i}
-                        className="text-xs text-[#718096] text-center py-1.5 px-2 rounded bg-[#122842]/50 border border-[#e2e5eb]/5"
+                        className="text-xs text-[var(--color-muted-foreground)] text-center py-1.5 px-2 rounded bg-[var(--brand-950)]/50 dark:bg-[var(--brand-900)]/50 border border-[var(--color-border)]"
                       >
                         {label}
                       </div>
@@ -276,11 +276,11 @@ export default function Hero() {
                 </div>
 
                 {/* Floating badge */}
-                <div className="absolute -top-4 -right-4 bg-[#122842] border border-[#e2e5eb]/20 rounded-lg px-4 py-3 shadow-xl">
-                  <div className="text-xs text-[#718096] mb-1">Processing</div>
+                <div className="absolute -top-4 -right-4 bg-[var(--brand-950)] dark:bg-[var(--brand-900)] border border-[var(--color-border)] rounded-lg px-4 py-3 shadow-xl">
+                  <div className="text-xs text-[var(--color-muted-foreground)] mb-1">Processing</div>
                   <div className="flex items-center gap-2">
-                    <div className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
-                    <span className="text-sm font-heading font-bold text-[#ffffff]">
+                    <div className="w-2 h-2 rounded-full bg-[var(--color-success)] animate-pulse" />
+                    <span className="text-sm font-[var(--font-heading)] font-bold text-[var(--color-foreground)]">
                       Real-time
                     </span>
                   </div>
@@ -292,7 +292,7 @@ export default function Hero() {
       </div>
 
       {/* Bottom gradient divider */}
-      <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#e2e5eb]/10 to-transparent" />
+      <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[var(--color-border)] to-transparent" />
     </section>
   )
 }

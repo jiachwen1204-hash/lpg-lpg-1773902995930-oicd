@@ -43,7 +43,7 @@ export default function SocialProof() {
       
       {/* Noise texture for depth */}
       <div 
-        className="absolute inset-0 pointer-events-none opacity-[0.025]"
+        className="absolute inset-0 pointer-events-none opacity-10"
         style={{
           backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")`,
           backgroundRepeat: 'repeat',
@@ -83,16 +83,16 @@ export default function SocialProof() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-20">
           {testimonials.map((t, i) => (
             <AnimateIn key={i} delay={i * 150} className="h-full">
-              <div className="relative h-full p-10 rounded-card-lg bg-surface-raised border border-surface-border overflow-hidden group hover:border-[#c9a84c]/30 transition-all duration-500">
+              <div className="relative h-full p-10 rounded-card-lg bg-surface-raised border border-surface-border overflow-hidden group hover:border-[var(--brand-500)]/30 transition-all duration-500">
                 {/* Top accent line */}
-                <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#c9a84c]/40 to-transparent" />
+                <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[var(--brand-500)/40] to-transparent" />
                 
                 {/* Hover glow */}
-                <div className="absolute inset-0 bg-[#1a3a5c]/0 group-hover:bg-[#1a3a5c]/5 transition-colors duration-500" />
+                <div className="absolute inset-0 bg-[var(--brand-900)]/0 group-hover:bg-[var(--brand-900)]/5 transition-colors duration-500" />
                 
                 <div className="relative">
                   {/* Quote icon */}
-                  <div className="font-heading text-6xl text-[#c9a84c]/20 leading-none mb-4 select-none">
+                  <div className="font-heading text-6xl text-[var(--brand-500)/20] leading-none mb-4 select-none">
                     &ldquo;
                   </div>
                   
@@ -102,7 +102,7 @@ export default function SocialProof() {
                   
                   <div className="flex items-center gap-4 pt-6 border-t border-surface-border">
                     {/* Avatar placeholder */}
-                    <div className="w-12 h-12 rounded-full bg-[#1a3a5c] flex items-center justify-center">
+                    <div className="w-12 h-12 rounded-full bg-[var(--brand-900)] flex items-center justify-center">
                       <span className="text-content-inverse font-heading font-semibold text-lg">
                         {t.author.split(' ').map(n => n[0]).join('')}
                       </span>
@@ -147,15 +147,15 @@ export default function SocialProof() {
             {stats.map((stat, i) => (
               <div key={i} className="text-center relative">
                 {/* Background number */}
-                <span className="absolute -top-4 left-1/2 -translate-x-1/2 font-heading font-bold text-[6rem] md:text-[8rem] text-[#1a3a5c]/5 leading-none select-none pointer-events-none">
+                <span className="absolute -top-4 left-1/2 -translate-x-1/2 font-heading font-bold text-[6rem] md:text-[8rem] text-[var(--brand-900)]/5 leading-none select-none pointer-events-none">
                   {i + 1}
                 </span>
                 
                 <div className="relative pt-8">
                   <div className="font-heading font-bold text-4xl md:text-5xl lg:text-6xl text-content-primary mb-3">
-                    {stat.value}<span className="text-[#c9a84c]">{stat.suffix}</span>
+                    {stat.value}<span className="text-[var(--brand-500)]">{stat.suffix}</span>
                   </div>
-                  <div className="text-xs text-[#c9a84c] uppercase tracking-[0.15em] font-body font-medium">
+                  <div className="text-xs text-[var(--brand-500)] uppercase tracking-[0.15em] font-body font-medium">
                     {stat.label}
                   </div>
                 </div>
@@ -168,10 +168,10 @@ export default function SocialProof() {
         <AnimateIn>
           <div className="relative rounded-card-lg overflow-hidden">
             {/* Dark navy background */}
-            <div className="absolute inset-0 bg-[#070e17]" />
+            <div className="absolute inset-0 bg-[var(--brand-950)]" />
             
             {/* Ambient glow */}
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] rounded-full bg-[#1a3a5c]/30 blur-[120px] pointer-events-none" />
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] rounded-full bg-[var(--brand-900)]/30 blur-[120px] pointer-events-none" />
             
             {/* Content */}
             <div className="relative py-16 md:py-20 px-8 text-center">
@@ -187,10 +187,10 @@ export default function SocialProof() {
               
               <div className="flex flex-wrap justify-center gap-4">
                 <div className="relative inline-block">
-                  <div className="absolute inset-0 bg-[#c9a84c]/20 blur-xl rounded-md scale-110" />
+                  <div className="absolute inset-0 bg-[var(--brand-500)]/20 blur-xl rounded-md scale-110" />
                   <a 
                     href="#contact"
-                    className="relative inline-flex items-center gap-2 px-8 py-4 rounded-md bg-[#c9a84c] text-[#070e17] font-body font-semibold text-base hover:bg-[#d4b55c] transition-colors duration-300"
+                    className="relative inline-flex items-center gap-2 px-8 py-4 rounded-md bg-[var(--brand-500)] text-[var(--brand-950)] font-body font-semibold text-base hover:bg-[var(--brand-400)] transition-colors duration-300"
                   >
                     Start Transforming
                     <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -201,7 +201,7 @@ export default function SocialProof() {
                 
                 <a 
                   href="#contact"
-                  className="inline-flex items-center gap-2 px-8 py-4 rounded-md border border-content-inverse/20 text-content-inverse font-body font-medium text-base hover:border-[#c9a84c]/40 hover:text-[#c9a84c] transition-colors duration-300"
+                  className="inline-flex items-center gap-2 px-8 py-4 rounded-md border border-content-inverse/20 text-content-inverse font-body font-medium text-base hover:border-[var(--brand-500)]/40 hover:text-[var(--brand-500)] transition-colors duration-300"
                 >
                   Get in Touch
                 </a>

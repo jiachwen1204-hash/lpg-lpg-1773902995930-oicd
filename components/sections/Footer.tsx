@@ -38,12 +38,12 @@ export default function Footer() {
   const year = new Date().getFullYear()
 
   return (
-    <footer className="relative bg-[#070e17] border-t border-[#1a3a5c]/30">
+    <footer className="relative bg-[var(--surface-900)] border-t border-[var(--border-subtle)]">
       {/* Gold accent line */}
-      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#c9a84c]/50 to-transparent" />
+      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[var(--brand-500)] to-transparent" />
       
       {/* Subtle glow effect */}
-      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-[#1a3a5c]/20 blur-[120px] pointer-events-none" />
+      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-[var(--surface-700)]/20 blur-[120px] pointer-events-none" />
 
       <div className="relative max-w-7xl mx-auto px-6 pt-20 pb-12">
         {/* Main footer content */}
@@ -57,10 +57,10 @@ export default function Footer() {
                 className="h-12 w-auto object-contain brightness-0 invert opacity-90 group-hover:opacity-100 transition-opacity duration-500" 
               />
             </Link>
-            <p className="mt-6 text-base text-[#718096] leading-relaxed max-w-md font-light">
+            <p className="mt-6 text-base text-[var(--text-secondary)] leading-relaxed max-w-md font-body font-light">
               {BRAND.description}
             </p>
-            <p className="mt-4 text-sm text-[#c9a84c] font-heading italic tracking-wide">
+            <p className="mt-4 text-sm text-[var(--brand-500)] font-heading italic tracking-wide">
               {BRAND.tagline}
             </p>
             
@@ -68,16 +68,16 @@ export default function Footer() {
             <div className="mt-8 space-y-4">
               <a
                 href={`mailto:${BRAND.email}`}
-                className="flex items-center gap-3 text-sm text-[#718096] hover:text-[#c9a84c] transition-colors duration-300 group"
+                className="flex items-center gap-3 text-sm text-[var(--text-secondary)] hover:text-[var(--brand-500)] transition-colors duration-300 group"
               >
-                <div className="w-8 h-8 rounded-md bg-[#1a3a5c]/50 flex items-center justify-center group-hover:bg-[#c9a84c]/20 transition-colors duration-300">
-                  <Mail className="w-4 h-4 text-[#c9a84c]/70" />
+                <div className="w-8 h-8 rounded-md bg-[var(--surface-700)]/50 flex items-center justify-center group-hover:bg-[var(--brand-500)]/20 transition-colors duration-300">
+                  <Mail className="w-4 h-4 text-[var(--brand-500)]/70" />
                 </div>
                 {BRAND.email}
               </a>
-              <div className="flex items-start gap-3 text-sm text-[#718096]">
-                <div className="w-8 h-8 rounded-md bg-[#1a3a5c]/50 flex items-center justify-center shrink-0 mt-0.5">
-                  <MapPin className="w-4 h-4 text-[#c9a84c]/70" />
+              <div className="flex items-start gap-3 text-sm text-[var(--text-secondary)]">
+                <div className="w-8 h-8 rounded-md bg-[var(--surface-700)]/50 flex items-center justify-center shrink-0 mt-0.5">
+                  <MapPin className="w-4 h-4 text-[var(--brand-500)]/70" />
                 </div>
                 <span className="whitespace-pre-line">{BRAND.address}</span>
               </div>
@@ -88,19 +88,19 @@ export default function Footer() {
           <div className="lg:col-span-7 grid grid-cols-2 md:grid-cols-3 gap-8">
             {/* Services */}
             <div>
-              <h3 className="font-heading text-[#ffffff] text-sm font-semibold tracking-wider uppercase mb-6 relative">
+              <h3 className="font-heading text-[var(--text-primary)] text-sm font-semibold tracking-wider uppercase mb-6 relative">
                 Services
-                <span className="absolute -bottom-2 left-0 w-8 h-px bg-[#c9a84c]/60" />
+                <span className="absolute -bottom-2 left-0 w-8 h-px bg-[var(--brand-500)]/60" />
               </h3>
               <ul className="space-y-3 mt-4">
                 {services.map(l => (
                   <li key={l.href}>
                     <a 
                       href={l.href} 
-                      className="text-sm text-[#718096] hover:text-[#ffffff] transition-colors duration-300 inline-flex items-center gap-1 group"
+                      className="text-sm text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors duration-300 font-body inline-flex items-center gap-1 group"
                     >
                       {l.label}
-                      <ArrowUpRight className="w-3 h-3 opacity-0 -translate-y-0.5 translate-x-0.5 group-hover:opacity-100 group-hover:translate-y-0 group-hover:translate-x-0 transition-all duration-300 text-[#c9a84c]" />
+                      <ArrowUpRight className="w-3 h-3 opacity-0 -translate-y-0.5 translate-x-0.5 group-hover:opacity-100 group-hover:translate-y-0 group-hover:translate-x-0 transition-all duration-300 text-[var(--brand-500)]" />
                     </a>
                   </li>
                 ))}
@@ -109,19 +109,19 @@ export default function Footer() {
 
             {/* Company */}
             <div>
-              <h3 className="font-heading text-[#ffffff] text-sm font-semibold tracking-wider uppercase mb-6 relative">
+              <h3 className="font-heading text-[var(--text-primary)] text-sm font-semibold tracking-wider uppercase mb-6 relative">
                 Company
-                <span className="absolute -bottom-2 left-0 w-8 h-px bg-[#c9a84c]/60" />
+                <span className="absolute -bottom-2 left-0 w-8 h-px bg-[var(--brand-500)]/60" />
               </h3>
               <ul className="space-y-3 mt-4">
                 {links.map(l => (
                   <li key={l.href}>
                     <a 
                       href={l.href} 
-                      className="text-sm text-[#718096] hover:text-[#ffffff] transition-colors duration-300 inline-flex items-center gap-1 group"
+                      className="text-sm text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors duration-300 font-body inline-flex items-center gap-1 group"
                     >
                       {l.label}
-                      <ArrowUpRight className="w-3 h-3 opacity-0 -translate-y-0.5 translate-x-0.5 group-hover:opacity-100 group-hover:translate-y-0 group-hover:translate-x-0 transition-all duration-300 text-[#c9a84c]" />
+                      <ArrowUpRight className="w-3 h-3 opacity-0 -translate-y-0.5 translate-x-0.5 group-hover:opacity-100 group-hover:translate-y-0 group-hover:translate-x-0 transition-all duration-300 text-[var(--brand-500)]" />
                     </a>
                   </li>
                 ))}
@@ -130,16 +130,16 @@ export default function Footer() {
 
             {/* Legal */}
             <div>
-              <h3 className="font-heading text-[#ffffff] text-sm font-semibold tracking-wider uppercase mb-6 relative">
+              <h3 className="font-heading text-[var(--text-primary)] text-sm font-semibold tracking-wider uppercase mb-6 relative">
                 Legal
-                <span className="absolute -bottom-2 left-0 w-8 h-px bg-[#c9a84c]/60" />
+                <span className="absolute -bottom-2 left-0 w-8 h-px bg-[var(--brand-500)]/60" />
               </h3>
               <ul className="space-y-3 mt-4">
                 {legal.map(l => (
                   <li key={l.href}>
                     <Link 
                       href={l.href} 
-                      className="text-sm text-[#718096] hover:text-[#ffffff] transition-colors duration-300"
+                      className="text-sm text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors duration-300 font-body"
                     >
                       {l.label}
                     </Link>
@@ -151,14 +151,14 @@ export default function Footer() {
         </div>
 
         {/* Certifications row */}
-        <div className="pt-8 border-t border-[#1a3a5c]/30 mb-12">
+        <div className="pt-8 border-t border-[var(--border-subtle)] mb-12">
           <div className="flex flex-wrap items-center gap-6">
-            <span className="text-xs text-[#718096] tracking-wider uppercase">Certifications</span>
+            <span className="text-xs text-[var(--text-secondary)] tracking-wider uppercase font-body">Certifications</span>
             <div className="flex flex-wrap gap-4">
               {certifications.map(cert => (
                 <div 
                   key={cert}
-                  className="px-4 py-1.5 rounded-sm border border-[#1a3a5c]/50 bg-[#1a3a5c]/20 text-xs text-[#718096]"
+                  className="px-4 py-1.5 rounded-sm border border-[var(--surface-700)]/50 bg-[var(--surface-700)]/20 text-xs text-[var(--text-secondary)] font-body"
                 >
                   {cert}
                 </div>
@@ -168,11 +168,11 @@ export default function Footer() {
         </div>
 
         {/* Bottom bar */}
-        <div className="flex flex-col md:flex-row items-center justify-between gap-4 pt-8 border-t border-[#1a3a5c]/30">
-          <div className="text-sm text-[#718096]">
+        <div className="flex flex-col md:flex-row items-center justify-between gap-4 pt-8 border-t border-[var(--border-subtle)]">
+          <div className="text-sm text-[var(--text-secondary)] font-body">
             © {year} {BRAND.name}. All rights reserved.
           </div>
-          <div className="text-sm text-[#4a5568] italic font-heading">
+          <div className="text-sm text-[var(--text-muted)] italic font-heading">
             Authored with precision. Delivered with excellence.
           </div>
         </div>

@@ -1,3 +1,4 @@
+```jsx
 'use client'
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
@@ -29,7 +30,7 @@ export default function Navbar() {
       className={cn(
         'fixed top-0 left-0 right-0 z-50 transition-all duration-500',
         scrolled
-          ? 'bg-white/95 backdrop-blur-md border-b border-[#e2e5eb] shadow-[0_1px_3px_rgba(0,0,0,0.08)]'
+          ? 'bg-white/95 backdrop-blur-md border-b border-[var(--color-border)] shadow-[var(--shadow-sm)]'
           : 'bg-transparent',
       )}
     >
@@ -43,7 +44,7 @@ export default function Navbar() {
             alt="WEQ logo" 
             className="h-10 w-auto object-contain" 
           />
-          <span className="font-heading font-bold text-2xl tracking-tight text-[#0f1a27] group-hover:text-[#1a3a5c] transition-colors duration-300">
+          <span className="font-heading font-bold text-2xl tracking-tight text-[var(--color-heading)] group-hover:text-[var(--color-brand-500)] transition-colors duration-300">
             {BRAND_NAME}
           </span>
         </Link>
@@ -53,10 +54,10 @@ export default function Navbar() {
             <li key={link.href}>
               <a
                 href={link.href}
-                className="relative px-5 py-2.5 text-sm font-body font-normal text-[#4a5568] hover:text-[#0f1a27] rounded-md hover:bg-[#f8f9fb] transition-all duration-300 group overflow-hidden"
+                className="relative px-5 py-2.5 text-sm font-body font-normal text-[var(--color-body)] hover:text-[var(--color-heading)] rounded-md hover:bg-[var(--color-muted-bg)] transition-all duration-300 group overflow-hidden"
               >
                 <span className="relative z-10">{link.label}</span>
-                <span className="absolute bottom-2 left-5 right-5 h-px bg-[#c9a84c] origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-out" />
+                <span className="absolute bottom-2 left-5 right-5 h-px bg-[var(--color-brand-600)] origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-out" />
               </a>
             </li>
           ))}
@@ -65,7 +66,7 @@ export default function Navbar() {
         <div className="hidden lg:flex items-center gap-4">
           <a
             href={CTA.href}
-            className="relative px-6 py-3 text-sm font-body font-semibold text-white bg-[#1a3a5c] rounded-md hover:bg-[#122842] shadow-[0_2px_8px_rgba(26,58,92,0.25)] hover:shadow-[0_4px_16px_rgba(26,58,92,0.35)] transition-all duration-300"
+            className="relative px-6 py-3 text-sm font-body font-semibold text-white bg-[var(--color-brand-500)] rounded-md hover:bg-[var(--color-brand-600)] shadow-[var(--shadow-cta)] hover:shadow-[var(--shadow-cta-hover)] transition-all duration-300"
           >
             {CTA.label}
           </a>
@@ -74,31 +75,31 @@ export default function Navbar() {
         <button
           onClick={() => setOpen(v => !v)}
           aria-label={open ? 'Close menu' : 'Open menu'}
-          className="lg:hidden p-2.5 rounded-md text-[#4a5568] hover:text-[#0f1a27] hover:bg-[#f8f9fb] transition-colors duration-200"
+          className="lg:hidden p-2.5 rounded-md text-[var(--color-body)] hover:text-[var(--color-heading)] hover:bg-[var(--color-muted-bg)] transition-colors duration-200"
         >
           {open ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
         </button>
       </nav>
 
       {open && (
-        <div className="lg:hidden bg-white border-b border-[#e2e5eb] animate-fade-up">
+        <div className="lg:hidden bg-white border-b border-[var(--color-border)] animate-fade-up">
           <ul className="max-w-7xl mx-auto px-6 py-5 flex flex-col gap-1">
             {navLinks.map(link => (
               <li key={link.href}>
                 <a
                   href={link.href}
                   onClick={() => setOpen(false)}
-                  className="block px-4 py-3.5 text-sm font-body text-[#4a5568] hover:text-[#0f1a27] rounded-md hover:bg-[#f8f9fb] transition-colors duration-200"
+                  className="block px-4 py-3.5 text-sm font-body text-[var(--color-body)] hover:text-[var(--color-heading)] rounded-md hover:bg-[var(--color-muted-bg)] transition-colors duration-200"
                 >
                   {link.label}
                 </a>
               </li>
             ))}
-            <li className="pt-3 mt-1 border-t border-[#e2e5eb]">
+            <li className="pt-3 mt-1 border-t border-[var(--color-border)]">
               <a
                 href={CTA.href}
                 onClick={() => setOpen(false)}
-                className="block px-6 py-3.5 text-sm font-body font-semibold text-center text-white bg-[#1a3a5c] rounded-md hover:bg-[#122842] transition-colors duration-200"
+                className="block px-6 py-3.5 text-sm font-body font-semibold text-center text-white bg-[var(--color-brand-500)] rounded-md hover:bg-[var(--color-brand-600)] transition-colors duration-200"
               >
                 {CTA.label}
               </a>
@@ -109,3 +110,4 @@ export default function Navbar() {
     </header>
   )
 }
+```

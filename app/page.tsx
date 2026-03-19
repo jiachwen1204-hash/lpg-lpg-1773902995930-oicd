@@ -13,13 +13,13 @@ export default function Home() {
       <Navbar />
       
       {/* Hero Section */}
-      <section className="relative min-h-[90vh] flex items-center overflow-hidden bg-gradient-to-br from-[#070e17] via-[#0a1628] to-[#0f1f3d]">
+      <section className="relative min-h-[90vh] flex items-center overflow-hidden bg-gradient-to-br from-surface-900 via-surface-800 to-surface-700">
         {/* Background depth layers */}
         <div className="absolute inset-0">
           {/* Primary ambient glow */}
-          <div className="absolute top-[20%] left-[50%] -translate-x-1/2 -translate-y-1/2 w-[900px] h-[900px] rounded-full bg-[#1a3a5c]/20 blur-[200px] pointer-events-none" />
+          <div className="absolute top-[20%] left-[50%] -translate-x-1/2 -translate-y-1/2 w-[900px] h-[900px] rounded-full bg-brand-500/20 blur-[200px] pointer-events-none" />
           {/* Secondary glow */}
-          <div className="absolute bottom-[10%] right-[10%] w-[600px] h-[600px] rounded-full bg-[#c9a84c]/5 blur-[150px] pointer-events-none" />
+          <div className="absolute bottom-[10%] right-[10%] w-[600px] h-[600px] rounded-full bg-brand-500/5 blur-[150px] pointer-events-none" />
           {/* Dot grid texture */}
           <div 
             className="absolute inset-0 opacity-[0.08]"
@@ -40,33 +40,33 @@ export default function Home() {
         </div>
 
         {/* Thin border divider */}
-        <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#1a3a5c]/50 to-transparent" />
+        <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-surface-border/50 to-transparent" />
 
         <div className="container mx-auto px-6 lg:px-8 relative z-10 py-24 lg:py-32">
           <div className="max-w-4xl">
             {/* Badge */}
             <div 
-              className="inline-flex items-center gap-3 px-4 py-2 rounded-md border border-[#c9a84c]/20 bg-[#c9a84c]/5 mb-8"
+              className="inline-flex items-center gap-3 px-4 py-2 rounded-md border border-brand-500/20 bg-brand-500/5 mb-8"
               style={{ animation: 'fade-up 0.9s ease-out forwards' } as React.CSSProperties}
             >
-              <span className="w-2 h-2 rounded-full bg-[#c9a84c] animate-pulse" />
-              <span className="text-sm font-body text-[#c9a84c] tracking-wide">AI-Powered Enterprise Solutions</span>
+              <span className="w-2 h-2 rounded-full bg-brand-500 animate-pulse" />
+              <span className="text-sm font-body text-brand-500 tracking-wide">AI-Powered Enterprise Solutions</span>
             </div>
 
             {/* Main headline */}
             <h1 
-              className="font-heading text-[clamp(2.5rem,6vw,5rem)] font-bold leading-[1.05] tracking-[-0.03em] text-white mb-8"
+              className="font-heading text-[clamp(2.5rem,6vw,5rem)] font-bold leading-[1.05] tracking-[-0.03em] text-content-primary mb-8"
               style={{ animation: 'fade-up 0.9s ease-out 0.1s both' } as React.CSSProperties}
             >
               Transform Your Business with{' '}
-              <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#c9a84c] via-[#ddc67a] to-[#c9a84c] bg-[length:200%_auto]">
+              <span className="bg-clip-text text-transparent bg-gradient-to-r from-brand-500 via-brand-300 to-brand-500 bg-[length:200%_auto]">
                 Intelligent AI Solutions
               </span>
             </h1>
 
             {/* Subheadline */}
             <p 
-              className="font-body text-lg lg:text-xl text-white/60 font-light leading-relaxed max-w-2xl mb-10"
+              className="font-body text-lg lg:text-xl text-content-secondary font-light leading-relaxed max-w-2xl mb-10"
               style={{ animation: 'fade-up 0.9s ease-out 0.2s both' } as React.CSSProperties}
             >
               We are an innovative AI Technology Platform company that empowers businesses to transform the way they operate through intelligent automation and data-driven solutions.
@@ -78,10 +78,10 @@ export default function Home() {
               style={{ animation: 'fade-up 0.9s ease-out 0.3s both' } as React.CSSProperties}
             >
               <div className="relative inline-block">
-                <div className="absolute inset-0 bg-[#0EA5E9]/30 blur-xl rounded-md scale-110" />
+                <div className="absolute inset-0 bg-primary-500/30 blur-xl rounded-md scale-110" />
                 <a 
                   href="#contact" 
-                  className="relative inline-flex items-center gap-2 px-8 py-4 bg-[#0EA5E9] text-white font-body font-semibold rounded-md hover:bg-[#0369A1] transition-all duration-300"
+                  className="relative inline-flex items-center gap-2 px-8 py-4 bg-primary-500 text-white font-body font-semibold rounded-md hover:bg-primary-600 transition-all duration-300"
                 >
                   Start Transforming
                   <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -104,24 +104,24 @@ export default function Home() {
             >
               <div className="flex items-center gap-3">
                 <div className="w-10 h-10 rounded-md bg-white/5 border border-white/10 flex items-center justify-center">
-                  <svg className="w-5 h-5 text-[#c9a84c]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-5 h-5 text-brand-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
                   </svg>
                 </div>
                 <div>
-                  <div className="text-sm font-heading font-semibold text-white">Enterprise Security</div>
-                  <div className="text-xs text-white/40 font-body">SOC 2 Compliant</div>
+                  <div className="text-sm font-heading font-semibold text-content-primary">Enterprise Security</div>
+                  <div className="text-xs text-content-muted font-body">SOC 2 Compliant</div>
                 </div>
               </div>
               <div className="flex items-center gap-3">
                 <div className="w-10 h-10 rounded-md bg-white/5 border border-white/10 flex items-center justify-center">
-                  <svg className="w-5 h-5 text-[#c9a84c]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-5 h-5 text-brand-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                   </svg>
                 </div>
                 <div>
-                  <div className="text-sm font-heading font-semibold text-white">99.9% Uptime</div>
-                  <div className="text-xs text-white/40 font-body">Guaranteed SLA</div>
+                  <div className="text-sm font-heading font-semibold text-content-primary">99.9% Uptime</div>
+                  <div className="text-xs text-content-muted font-body">Guaranteed SLA</div>
                 </div>
               </div>
             </div>
@@ -136,7 +136,7 @@ export default function Home() {
             Trusted by Industry Leaders
           </p>
           <div className="flex flex-wrap items-center justify-center gap-12 opacity-50 grayscale hover:grayscale-0 transition-all duration-500">
-            {['TechCorp', 'DataFlow', 'InnovateAI', 'CloudScale', 'NextGen'].map((partner) => (
+            {['Meridian Capital', 'Vertex Systems', 'Nova Dynamics', 'Apex Ventures', 'Summit Partners'].map((partner) => (
               <div key={partner} className="font-heading text-xl text-content-secondary tracking-wide">
                 {partner}
               </div>

@@ -39,7 +39,7 @@ function CountUp({ target, suffix }: { target: number; suffix: string }) {
 
 export default function Stats() {
   return (
-    <section className="relative py-[96px] bg-[#f8f9fb] border-y border-[#e2e5eb]">
+    <section className="relative py-24 bg-neutral-50 border-y border-neutral-200">
       {/* Subtle noise texture for depth */}
       <div 
         className="absolute inset-0 pointer-events-none opacity-[0.03]"
@@ -60,16 +60,16 @@ export default function Stats() {
               >
                 <div className="relative inline-block">
                   {/* Gold accent line above number */}
-                  <div className="w-12 h-px bg-[#c9a84c] mx-auto mb-6 opacity-80 group-hover:opacity-100 group-hover:w-16 transition-all duration-500" />
+                  <div className="w-12 h-px bg-brand-500 mx-auto mb-6 opacity-80 group-hover:opacity-100 group-hover:w-16 transition-all duration-500" />
                   
                   {/* Large serif stat number with gold accent */}
-                  <div className="font-heading font-bold text-[clamp(2.5rem,5vw,4rem)] leading-[1] text-[#1a3a5c] tracking-tight">
+                  <div className="font-heading font-bold text-[clamp(2.5rem,5vw,4rem)] leading-[1] text-brand-900 tracking-tight">
                     <CountUp target={stat.value} suffix={stat.suffix} />
                   </div>
                 </div>
                 
                 {/* Muted label in body font */}
-                <div className="mt-4 text-sm md:text-base text-[#718096] font-body font-normal tracking-wide uppercase">
+                <div className="mt-4 text-sm md:text-base text-neutral-500 font-body font-normal tracking-wide uppercase">
                   {stat.label}
                 </div>
               </AnimateIn>
