@@ -1,14 +1,11 @@
+'use client'
+
 import Navbar from '@/components/ui/Navbar'
-import SocialProof from '@/components/sections/SocialProof'
 import Services from '@/components/sections/Services'
 import About from '@/components/sections/About'
 import Stats from '@/components/sections/Stats'
 import CTA from '@/components/sections/CTA'
 import Footer from '@/components/sections/Footer'
-import Testimonials from '@/components/sections/Testimonials'
-import ContactForm from '@/components/sections/ContactForm'
-import Team from '@/components/sections/Team'
-import CaseStudies from '@/components/sections/CaseStudies'
 
 export default function Home() {
   return (
@@ -35,7 +32,7 @@ export default function Home() {
           <div 
             className="absolute inset-0 opacity-[0.03] pointer-events-none"
             style={{
-              backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")`,
+              backgroundImage: "url(\"data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E\")",
               backgroundRepeat: 'repeat',
               backgroundSize: '256px 256px',
             }}
@@ -50,7 +47,7 @@ export default function Home() {
             {/* Badge */}
             <div 
               className="inline-flex items-center gap-3 px-4 py-2 rounded-md border border-[#c9a84c]/20 bg-[#c9a84c]/5 mb-8"
-              style={{ animation: 'fade-up 0.9s ease-out forwards' }}
+              style={{ animation: 'fade-up 0.9s ease-out forwards' } as React.CSSProperties}
             >
               <span className="w-2 h-2 rounded-full bg-[#c9a84c] animate-pulse" />
               <span className="text-sm font-body text-[#c9a84c] tracking-wide">AI-Powered Enterprise Solutions</span>
@@ -59,7 +56,7 @@ export default function Home() {
             {/* Main headline */}
             <h1 
               className="font-heading text-[clamp(2.5rem,6vw,5rem)] font-bold leading-[1.05] tracking-[-0.03em] text-white mb-8"
-              style={{ animation: 'fade-up 0.9s ease-out 0.1s both' }}
+              style={{ animation: 'fade-up 0.9s ease-out 0.1s both' } as React.CSSProperties}
             >
               Transform Your Business with{' '}
               <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#c9a84c] via-[#ddc67a] to-[#c9a84c] bg-[length:200%_auto]">
@@ -70,7 +67,7 @@ export default function Home() {
             {/* Subheadline */}
             <p 
               className="font-body text-lg lg:text-xl text-white/60 font-light leading-relaxed max-w-2xl mb-10"
-              style={{ animation: 'fade-up 0.9s ease-out 0.2s both' }}
+              style={{ animation: 'fade-up 0.9s ease-out 0.2s both' } as React.CSSProperties}
             >
               We are an innovative AI Technology Platform company that empowers businesses to transform the way they operate through intelligent automation and data-driven solutions.
             </p>
@@ -78,7 +75,7 @@ export default function Home() {
             {/* CTA Buttons */}
             <div 
               className="flex flex-wrap gap-4"
-              style={{ animation: 'fade-up 0.9s ease-out 0.3s both' }}
+              style={{ animation: 'fade-up 0.9s ease-out 0.3s both' } as React.CSSProperties}
             >
               <div className="relative inline-block">
                 <div className="absolute inset-0 bg-[#0EA5E9]/30 blur-xl rounded-md scale-110" />
@@ -103,7 +100,7 @@ export default function Home() {
             {/* Trust indicators */}
             <div 
               className="flex items-center gap-8 mt-12 pt-8 border-t border-white/10"
-              style={{ animation: 'fade-up 0.9s ease-out 0.4s both' }}
+              style={{ animation: 'fade-up 0.9s ease-out 0.4s both' } as React.CSSProperties}
             >
               <div className="flex items-center gap-3">
                 <div className="w-10 h-10 rounded-md bg-white/5 border border-white/10 flex items-center justify-center">
@@ -151,10 +148,6 @@ export default function Home() {
       <Services />
       <About />
       <Stats />
-      <CaseStudies />
-      <Testimonials />
-      <Team />
-      <ContactForm />
       <CTA />
       <Footer />
     </main>

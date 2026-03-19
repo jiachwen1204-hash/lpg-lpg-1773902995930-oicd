@@ -164,7 +164,7 @@ export default function Hero() {
 
           {/* Visual column - abstract AI visualization */}
           <div className="lg:col-span-4 lg:col-start-9 hidden lg:block">
-            <AnimateIn delay={200} animation="scale-in">
+            <AnimateIn delay={200}>
               <div className="relative">
                 {/* Main visual container */}
                 <div className="relative rounded-xl border border-[#e2e5eb]/10 bg-[#1a3a5c]/30 backdrop-blur-sm p-8 overflow-hidden">

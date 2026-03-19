@@ -2,7 +2,7 @@
 import { useEffect, useRef, useState } from 'react'
 import AnimateIn from '@/components/ui/AnimateIn'
 
-// @lpg: Realistic AI technology platform metrics for WEQ
+// Realistic AI technology platform metrics for WEQ
 const stats = [
   { value: 847,  suffix: '+', label: 'AI Solutions Deployed' },
   { value: 99,   suffix: '%', label: 'Client Retention Rate' },
@@ -53,27 +53,27 @@ export default function Stats() {
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12">
           {stats.map((stat, i) => (
-            <AnimateIn 
-              key={stat.label} 
-              delay={i * 150} 
-              animation="fade-up"
-              className="text-center group"
-            >
-              <div className="relative inline-block">
-                {/* Gold accent line above number */}
-                <div className="w-12 h-px bg-[#c9a84c] mx-auto mb-6 opacity-80 group-hover:opacity-100 group-hover:w-16 transition-all duration-500" />
-                
-                {/* Large serif stat number with gold accent */}
-                <div className="font-heading font-bold text-[clamp(2.5rem,5vw,4rem)] leading-[1] text-[#1a3a5c] tracking-tight">
-                  <CountUp target={stat.value} suffix={stat.suffix} />
+            <div key={stat.label}>
+              <AnimateIn 
+                delay={i * 150}
+                className="text-center group"
+              >
+                <div className="relative inline-block">
+                  {/* Gold accent line above number */}
+                  <div className="w-12 h-px bg-[#c9a84c] mx-auto mb-6 opacity-80 group-hover:opacity-100 group-hover:w-16 transition-all duration-500" />
+                  
+                  {/* Large serif stat number with gold accent */}
+                  <div className="font-heading font-bold text-[clamp(2.5rem,5vw,4rem)] leading-[1] text-[#1a3a5c] tracking-tight">
+                    <CountUp target={stat.value} suffix={stat.suffix} />
+                  </div>
                 </div>
-              </div>
-              
-              {/* Muted label in body font */}
-              <div className="mt-4 text-sm md:text-base text-[#718096] font-body font-normal tracking-wide uppercase">
-                {stat.label}
-              </div>
-            </AnimateIn>
+                
+                {/* Muted label in body font */}
+                <div className="mt-4 text-sm md:text-base text-[#718096] font-body font-normal tracking-wide uppercase">
+                  {stat.label}
+                </div>
+              </AnimateIn>
+            </div>
           ))}
         </div>
       </div>

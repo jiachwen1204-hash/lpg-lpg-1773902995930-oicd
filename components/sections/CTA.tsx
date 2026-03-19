@@ -34,7 +34,7 @@ export default function CTA() {
       <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-[#c9a84c]/40 to-transparent" />
 
       <div className="relative z-10 max-w-3xl mx-auto px-6 py-24 md:py-32 text-center">
-        <AnimateIn animation="fade-up" duration={900}>
+        <AnimateIn>
           <p className="inline-flex items-center gap-2 text-xs font-medium tracking-[0.2em] uppercase text-[#c9a84c] mb-6">
             <span className="w-8 h-px bg-[#c9a84c]/50" />
             {CONTENT.eyebrow}
@@ -42,7 +42,7 @@ export default function CTA() {
           </p>
         </AnimateIn>
 
-        <AnimateIn animation="fade-up" delay={100} duration={900}>
+        <AnimateIn>
           <h2 className="font-heading font-bold text-[2.5rem] md:text-[3.5rem] lg:text-[4rem] text-white leading-[1.1] tracking-[-0.02em] mb-6">
             Ready to{' '}
             <span className="relative inline-block">
@@ -53,13 +53,13 @@ export default function CTA() {
           </h2>
         </AnimateIn>
 
-        <AnimateIn animation="fade-up" delay={200} duration={900}>
+        <AnimateIn>
           <p className="text-lg md:text-xl text-white/60 font-light leading-relaxed max-w-2xl mx-auto mb-12">
             {CONTENT.subtext}
           </p>
         </AnimateIn>
 
-        <AnimateIn animation="fade-up" delay={300} duration={900}>
+        <AnimateIn>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-5">
             <div className="relative group">
               <div className="absolute inset-0 bg-[#c9a84c]/20 blur-xl rounded-md scale-110 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
@@ -82,7 +82,7 @@ export default function CTA() {
           </div>
         </AnimateIn>
 
-        <AnimateIn animation="fade-up" delay={400} duration={900}>
+        <AnimateIn>
           <p className="mt-10 text-sm text-white/40 font-light">
             Join leading enterprises already leveraging WEQ's intelligent platform
           </p>
