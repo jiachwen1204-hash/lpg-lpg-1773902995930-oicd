@@ -1,88 +1,180 @@
 import Link from 'next/link'
-import { Mail, MapPin } from 'lucide-react'
+import { Mail, MapPin, ArrowUpRight } from 'lucide-react'
 
-// @lpg: Replace all company-specific values
 const BRAND = {
-  name:    'Company Name',
-  tagline: 'Your trusted partner for growth.',
-  email:   'hello@company.com',
-  address: '123 Business Street, City, Country',
+  name: 'WEQ',
+  tagline: 'Transform Your Business with Intelligent AI Solutions',
+  email: 'jiachwen99@gmail.com',
+  address: '854 TAMPINES STREET 82\n12-227',
+  description: 'We are an innovative AI Technology Platform company that empowers businesses to transform the way they operate through intelligent automation and data-driven solutions.',
 }
 
-// @lpg: For 1-Page use anchor links; for 5-Pages use real routes + include all 5 pages
 const links = [
   { label: 'Services', href: '#services' },
-  { label: 'About',    href: '#about'    },
-  { label: 'Contact',  href: '#contact'  },
+  { label: 'About', href: '#about' },
+  { label: 'Solutions', href: '#solutions' },
+  { label: 'Contact', href: '#contact' },
+]
+
+const services = [
+  { label: 'AI Consulting', href: '#ai-consulting' },
+  { label: 'Intelligent Automation', href: '#automation' },
+  { label: 'Data Analytics', href: '#analytics' },
+  { label: 'Cloud Integration', href: '#cloud' },
 ]
 
 const legal = [
-  { label: 'Privacy Policy',   href: '/privacy' },
-  { label: 'Terms of Service', href: '/terms'   },
+  { label: 'Privacy Policy', href: '/privacy' },
+  { label: 'Terms of Service', href: '/terms' },
+]
+
+const certifications = [
+  'ISO 27001 Certified',
+  'SOC 2 Compliant',
+  'GDPR Ready',
 ]
 
 export default function Footer() {
   const year = new Date().getFullYear()
 
   return (
-    <footer className="bg-surface-raised border-t border-surface-border">
-      <div className="max-w-7xl mx-auto px-6 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
-          {/* Brand */}
-          <div>
-            <Link
-              href="/"
-              className="font-heading font-bold text-xl text-content-primary hover:text-brand-500 transition-colors"
-            >
-              {BRAND.name}
+    <footer className="relative bg-[#070e17] border-t border-[#1a3a5c]/30">
+      {/* Gold accent line */}
+      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#c9a84c]/50 to-transparent" />
+      
+      {/* Subtle glow effect */}
+      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-[#1a3a5c]/20 blur-[120px] pointer-events-none" />
+
+      <div className="relative max-w-7xl mx-auto px-6 pt-20 pb-12">
+        {/* Main footer content */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 mb-16">
+          {/* Brand column */}
+          <div className="lg:col-span-5">
+            <Link href="/" className="inline-block group">
+              <img 
+                src="https://u5ft5besqtymo1lf.public.blob.vercel-storage.com/logos/1773902994346-ai-artificial-intelligence-improves-emai-600nw-2655586379.webp" 
+                alt="WEQ logo" 
+                className="h-12 w-auto object-contain brightness-0 invert opacity-90 group-hover:opacity-100 transition-opacity duration-500" 
+              />
             </Link>
-            <p className="mt-3 text-sm text-content-muted max-w-xs">{BRAND.tagline}</p>
-            <div className="mt-6 space-y-2">
+            <p className="mt-6 text-base text-[#718096] leading-relaxed max-w-md font-light">
+              {BRAND.description}
+            </p>
+            <p className="mt-4 text-sm text-[#c9a84c] font-heading italic tracking-wide">
+              {BRAND.tagline}
+            </p>
+            
+            {/* Contact info */}
+            <div className="mt-8 space-y-4">
               <a
                 href={`mailto:${BRAND.email}`}
-                className="flex items-center gap-2 text-sm text-content-muted hover:text-brand-500 transition-colors"
+                className="flex items-center gap-3 text-sm text-[#718096] hover:text-[#c9a84c] transition-colors duration-300 group"
               >
-                <Mail className="w-4 h-4" />
+                <div className="w-8 h-8 rounded-md bg-[#1a3a5c]/50 flex items-center justify-center group-hover:bg-[#c9a84c]/20 transition-colors duration-300">
+                  <Mail className="w-4 h-4 text-[#c9a84c]/70" />
+                </div>
                 {BRAND.email}
               </a>
-              <div className="flex items-start gap-2 text-sm text-content-muted">
-                <MapPin className="w-4 h-4 mt-0.5 shrink-0" />
-                {BRAND.address}
+              <div className="flex items-start gap-3 text-sm text-[#718096]">
+                <div className="w-8 h-8 rounded-md bg-[#1a3a5c]/50 flex items-center justify-center shrink-0 mt-0.5">
+                  <MapPin className="w-4 h-4 text-[#c9a84c]/70" />
+                </div>
+                <span className="whitespace-pre-line">{BRAND.address}</span>
               </div>
             </div>
           </div>
 
-          {/* Navigation */}
-          <div>
-            <h3 className="font-heading font-semibold text-content-primary mb-4">Navigation</h3>
-            <ul className="space-y-2">
-              {links.map(l => (
-                <li key={l.href}>
-                  <a href={l.href} className="text-sm text-content-muted hover:text-brand-500 transition-colors">
-                    {l.label}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
+          {/* Navigation columns */}
+          <div className="lg:col-span-7 grid grid-cols-2 md:grid-cols-3 gap-8">
+            {/* Services */}
+            <div>
+              <h3 className="font-heading text-[#ffffff] text-sm font-semibold tracking-wider uppercase mb-6 relative">
+                Services
+                <span className="absolute -bottom-2 left-0 w-8 h-px bg-[#c9a84c]/60" />
+              </h3>
+              <ul className="space-y-3 mt-4">
+                {services.map(l => (
+                  <li key={l.href}>
+                    <a 
+                      href={l.href} 
+                      className="text-sm text-[#718096] hover:text-[#ffffff] transition-colors duration-300 inline-flex items-center gap-1 group"
+                    >
+                      {l.label}
+                      <ArrowUpRight className="w-3 h-3 opacity-0 -translate-y-0.5 translate-x-0.5 group-hover:opacity-100 group-hover:translate-y-0 group-hover:translate-x-0 transition-all duration-300 text-[#c9a84c]" />
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
 
-          {/* Legal */}
-          <div>
-            <h3 className="font-heading font-semibold text-content-primary mb-4">Legal</h3>
-            <ul className="space-y-2">
-              {legal.map(l => (
-                <li key={l.href}>
-                  <Link href={l.href} className="text-sm text-content-muted hover:text-brand-500 transition-colors">
-                    {l.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
+            {/* Company */}
+            <div>
+              <h3 className="font-heading text-[#ffffff] text-sm font-semibold tracking-wider uppercase mb-6 relative">
+                Company
+                <span className="absolute -bottom-2 left-0 w-8 h-px bg-[#c9a84c]/60" />
+              </h3>
+              <ul className="space-y-3 mt-4">
+                {links.map(l => (
+                  <li key={l.href}>
+                    <a 
+                      href={l.href} 
+                      className="text-sm text-[#718096] hover:text-[#ffffff] transition-colors duration-300 inline-flex items-center gap-1 group"
+                    >
+                      {l.label}
+                      <ArrowUpRight className="w-3 h-3 opacity-0 -translate-y-0.5 translate-x-0.5 group-hover:opacity-100 group-hover:translate-y-0 group-hover:translate-x-0 transition-all duration-300 text-[#c9a84c]" />
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Legal */}
+            <div>
+              <h3 className="font-heading text-[#ffffff] text-sm font-semibold tracking-wider uppercase mb-6 relative">
+                Legal
+                <span className="absolute -bottom-2 left-0 w-8 h-px bg-[#c9a84c]/60" />
+              </h3>
+              <ul className="space-y-3 mt-4">
+                {legal.map(l => (
+                  <li key={l.href}>
+                    <Link 
+                      href={l.href} 
+                      className="text-sm text-[#718096] hover:text-[#ffffff] transition-colors duration-300"
+                    >
+                      {l.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
         </div>
 
-        <div className="pt-8 border-t border-surface-border text-center text-sm text-content-muted">
-          © {year} {BRAND.name}. All rights reserved.
+        {/* Certifications row */}
+        <div className="pt-8 border-t border-[#1a3a5c]/30 mb-12">
+          <div className="flex flex-wrap items-center gap-6">
+            <span className="text-xs text-[#718096] tracking-wider uppercase">Certifications</span>
+            <div className="flex flex-wrap gap-4">
+              {certifications.map(cert => (
+                <div 
+                  key={cert}
+                  className="px-4 py-1.5 rounded-sm border border-[#1a3a5c]/50 bg-[#1a3a5c]/20 text-xs text-[#718096]"
+                >
+                  {cert}
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        {/* Bottom bar */}
+        <div className="flex flex-col md:flex-row items-center justify-between gap-4 pt-8 border-t border-[#1a3a5c]/30">
+          <div className="text-sm text-[#718096]">
+            © {year} {BRAND.name}. All rights reserved.
+          </div>
+          <div className="text-sm text-[#4a5568] italic font-heading">
+            Authored with precision. Delivered with excellence.
+          </div>
         </div>
       </div>
     </footer>

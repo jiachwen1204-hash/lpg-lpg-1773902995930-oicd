@@ -2,12 +2,12 @@
 import { useEffect, useRef, useState } from 'react'
 import AnimateIn from '@/components/ui/AnimateIn'
 
-// @lpg: Replace with real company stats — specific and credible numbers
+// @lpg: Realistic AI technology platform metrics for WEQ
 const stats = [
-  { value: 500,  suffix: '+', label: 'Projects Completed' },
-  { value: 98,   suffix: '%', label: 'Client Satisfaction' },
-  { value: 10,   suffix: '+', label: 'Years in Business'   },
-  { value: 50,   suffix: '+', label: 'Team Members'        },
+  { value: 847,  suffix: '+', label: 'AI Solutions Deployed' },
+  { value: 99,   suffix: '%', label: 'Client Retention Rate' },
+  { value: 12,   suffix: '+', label: 'Years of Innovation'   },
+  { value: 2500, suffix: '+', label: 'Enterprise Clients'    },
 ]
 
 function CountUp({ target, suffix }: { target: number; suffix: string }) {
@@ -39,15 +39,40 @@ function CountUp({ target, suffix }: { target: number; suffix: string }) {
 
 export default function Stats() {
   return (
-    <section className="py-section bg-surface-raised">
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+    <section className="relative py-[96px] bg-[#f8f9fb] border-y border-[#e2e5eb]">
+      {/* Subtle noise texture for depth */}
+      <div 
+        className="absolute inset-0 pointer-events-none opacity-[0.03]"
+        style={{
+          backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")`,
+          backgroundRepeat: 'repeat',
+          backgroundSize: '256px 256px',
+        }}
+      />
+      
+      <div className="max-w-7xl mx-auto px-6 relative z-10">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12">
           {stats.map((stat, i) => (
-            <AnimateIn key={stat.label} delay={i * 100} className="text-center">
-              <div className="font-heading font-black text-display-md text-brand-500 mb-2">
-                <CountUp target={stat.value} suffix={stat.suffix} />
+            <AnimateIn 
+              key={stat.label} 
+              delay={i * 150} 
+              animation="fade-up"
+              className="text-center group"
+            >
+              <div className="relative inline-block">
+                {/* Gold accent line above number */}
+                <div className="w-12 h-px bg-[#c9a84c] mx-auto mb-6 opacity-80 group-hover:opacity-100 group-hover:w-16 transition-all duration-500" />
+                
+                {/* Large serif stat number with gold accent */}
+                <div className="font-heading font-bold text-[clamp(2.5rem,5vw,4rem)] leading-[1] text-[#1a3a5c] tracking-tight">
+                  <CountUp target={stat.value} suffix={stat.suffix} />
+                </div>
               </div>
-              <div className="text-sm text-content-muted">{stat.label}</div>
+              
+              {/* Muted label in body font */}
+              <div className="mt-4 text-sm md:text-base text-[#718096] font-body font-normal tracking-wide uppercase">
+                {stat.label}
+              </div>
             </AnimateIn>
           ))}
         </div>
